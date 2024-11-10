@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "dist",
+    "rootDir": "packages",
+    "skipLibCheck": true
+  },
+  "include": ["*"],
+  "references": [
+    { "path": "./socket-server" },
+  ]
+}

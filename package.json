@@ -1,0 +1,17 @@
+{
+  "name": "volcanic-lightning-monitoring",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "socket-server",
+    "volcanic-lightning-infra"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
