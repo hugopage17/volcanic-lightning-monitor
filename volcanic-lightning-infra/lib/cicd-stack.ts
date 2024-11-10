@@ -61,6 +61,14 @@ export class CICDStack extends NestedStack {
       },
     });
 
+    const socketServerBuildProject = this.buildProject({
+      id: 'SocketServerBuildProject',
+      buildspec: 'socket-server/buildspec.yml',
+      envVariables: {
+        REPO: { type: BuildEnvironmentVariableType.PLAINTEXT, value: 'socket-server' },
+      },
+    });
+
     spaHostingBucket.grantReadWrite(reactAppBuildProject);
     appCdn.grantCreateInvalidation(reactAppBuildProject);
 

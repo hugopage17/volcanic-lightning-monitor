@@ -8,6 +8,7 @@ import { HostedZone, ARecord, RecordTarget } from 'aws-cdk-lib/aws-route53';
 import { Secret } from 'aws-cdk-lib/aws-secretsmanager';
 import { AttributeType, Table } from 'aws-cdk-lib/aws-dynamodb';
 import { CICDStack } from './cicd-stack';
+import { Repository } from 'aws-cdk-lib/aws-ecr';
 
 export class VolcanicLightningInfraStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -71,6 +72,10 @@ export class VolcanicLightningInfraStack extends cdk.Stack {
 
     const githubSecret = new Secret(this, 'github-auth-secret', {
         secretName: 'github/oauth/secret'
+    })
+
+    const socketserverECRRepo = new Repository(this, `${APP_NAME}-ecr-repo`, {
+        repositoryName: `${APP_NAME}-socket-server-app`,
     })
 
     new CICDStack(this, 'volcanic-lightning-cicd-stack', {
