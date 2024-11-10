@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "socket-server",
-    "volcanic-lightning-infra"
+    "volcanic-lightning-infra",
+    "frontend"
   ],
   "main": "index.js",
   "scripts": {
